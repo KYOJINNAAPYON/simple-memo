@@ -26,6 +26,10 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
+Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
