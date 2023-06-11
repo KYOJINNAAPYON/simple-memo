@@ -37,7 +37,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'required|max:100'
+            'title' => 'required|max:100',
         ]);
 
         $post = new Post();

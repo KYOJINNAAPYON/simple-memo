@@ -23,31 +23,31 @@
         </td>
         
         <td>
-        <button type="submit button" class="btn btn-primary btn-sm">投稿</button></a>
+        <button type="submit button" class="btn btn-primary btn-sm">投稿</button>
         </td>
-      
-      </form>
-          
+
         @if (session('flash_message'))
         <p>{{ session('flash_message') }}</p>
         @endif
-        
-        <span class="border-bottom"></span>
-  </div>
-
- 
-
-<main>
-  <article class="memos">
+      
         @if ($errors->any())
         <div>
-          <ul>
+          <ul class="alert alert-danger">
           @foreach( $errors->all() as $error)
-            <li>{{ $error }}</li>
+            {{ $error }}
           @endforeach
           </ul>
         </div>
         @endif
+
+      </form>
+  </div>
+
+ 
+
+
+  <article class="memos">
+        
  
     <div class="container">
       <div class="mt-5">
@@ -85,8 +85,7 @@
    </div>
  
              </div>
-         </article>
-     </main>
+</article>
  </body>
  
  </html>
