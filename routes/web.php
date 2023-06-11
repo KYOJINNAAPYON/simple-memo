@@ -40,3 +40,5 @@ Route::get('/', [PostController::class, 'index'])->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('posts', PostController::class)->only(['index', 'store', 'update', 'destroy'])->middleware('auth');
