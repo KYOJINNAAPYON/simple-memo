@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('posts.index');
     }
 
     /**
@@ -37,13 +37,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:100',
-            'content' => 'required|max:100',
+            'required|max:100'
         ]);
 
         $post = new Post();
         $post->title = $request->input('title');
-        $post->content = $request->input('content');
         $post->save();
 
         return redirect()->route('posts.index')->with('flash_message', '投稿が完了しました。');
@@ -82,11 +80,9 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required|max:100',
-            'content' => 'required|max:100',
         ]);
-        
+
         $post->title = $request->input('title');
-        $post->content = $request->input('content');
         $post->save();
 
         return redirect()->route('posts.show', $post)->with('flash_message', '投稿を編集しました。');
