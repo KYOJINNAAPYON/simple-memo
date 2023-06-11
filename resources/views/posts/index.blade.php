@@ -53,11 +53,13 @@
         <p class="fs-6 my-3">メモ一覧</p>
         
       <table class="table">
-          <tr>
+        <tr>
           <th scope="col">No</th>
           <th scope="col">メモ内容</th>
           <th scope="col">作成日時</th>
           <th scope="col">更新日時</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
        
         @foreach($posts as $post)
@@ -78,7 +80,7 @@
           </td>
         </tr>
         @endforeach
-        </table>
+      </table>
     </div>
    </div>
  
