@@ -32,11 +32,9 @@
       
         @if ($errors->any())
         <div>
-          <ul class="alert alert-danger">
           @foreach( $errors->all() as $error)
-            {{ $error }}
+          <p class="text-danger">{{ $error }}</p>
           @endforeach
-          </ul>
         </div>
         @endif
 
