@@ -40,14 +40,10 @@
 
       </form>
   </div>
-
+</body>
  
 
-
-  <article class="memos">
-        
- 
-    <div class="container">
+      <div class="container">
       <div class="mt-5">
         <p class="border-top border-3"></p>
         <p class="fs-6 my-3">メモ一覧</p>
@@ -79,13 +75,15 @@
             </form>
           </td>
         </tr>
+        
         @endforeach
+        
       </table>
+      {{$posts->links()}}
     </div>
    </div>
- 
-             </div>
-</article>
- </body>
+   
+
+
  
  </html>
