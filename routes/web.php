@@ -35,6 +35,8 @@ Route::get('/', [PostController::class, 'index']);
 
 Route::resource('posts', PostController::class);
 
+Route::get('/', [PostController::class, 'index'])->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
