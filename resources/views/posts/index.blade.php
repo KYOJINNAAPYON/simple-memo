@@ -79,7 +79,7 @@
         @endforeach
         
       </table>
-      {{$posts->links()}}
+     
     </div>
    </div>
    

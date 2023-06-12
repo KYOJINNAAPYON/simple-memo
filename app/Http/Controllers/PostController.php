@@ -15,9 +15,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts_id = Auth::user()->posts;
-        $posts = Post::orderByDesc('created_at')->paginate(10);
-        return view('posts.index', compact('posts_id','posts'));
+        // $posts = Post::latest()->paginate(10);
+        $posts = Post::latest();
+        $posts = Auth::user()->posts;
+        return view('posts.index', compact('posts','posts'));
     }
 
     /**
