@@ -13,12 +13,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $posts = Post::latest()->paginate(10);
-        $posts = Post::latest();
-        $posts = Auth::user()->posts;
-        return view('posts.index', compact('posts','posts'));
+        $posts = Post::where('user_id','=', $request->user)->latest()->paginate(3);
+        return view('posts.index', compact('posts'));
     }
 
     /**
