@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts = Auth::user()->posts;
-        $posts = Post::where('user_id','=', Auth::user()->id)->sortable()->latest()->sortable()->paginate(3);
+        $posts = Post::where('user_id','=', Auth::user()->id)->sortable()->latest()->paginate(3);
         return view('posts.index', compact('posts', 'posts'));
     }
 
