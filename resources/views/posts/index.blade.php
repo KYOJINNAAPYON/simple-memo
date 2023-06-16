@@ -47,6 +47,7 @@
       <div class="mt-5">
         <p class="border-top border-3"></p>
         <p class="fs-6 my-3">メモ一覧</p>
+        <p class="fs-6 my-3">@sortablelink('id', '並び替え')</p>
         
       <table class="table">
         <tr>
