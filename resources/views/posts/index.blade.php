@@ -40,6 +40,16 @@
 
       </form>
   </div>
+
+  <!-- // 検索機能　// -->
+  <div>
+    <form action="{{ route('posts.index') }}" method="GET">
+      <input type="text" name="keyword" value="{{ $keyword }}">
+      <input type="submit" value="検索">
+    </form>
+  </div>
+<!-- 検索機能ここまで　// -->
+
 </body>
  
 

@@ -37,6 +37,8 @@ Route::resource('posts', PostController::class);
 
 Route::get('/', [PostController::class, 'index'])->middleware('auth');
 
+Route::get('/', [PostController::class, 'index'])->name('posts.edit');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -15,9 +15,17 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Auth::user()->posts;
+        $keyword = $request->input('keyword');
+
+        $query = Post::query();
+        if(!empty($keyword)) {
+        $query->where('title', 'LIKE', "%{$keyword}%")->get();
+        }
+
+        $posts = $query->get();
         $posts = Post::where('user_id','=', Auth::user()->id)->sortable()->latest()->paginate(3);
-        return view('posts.index', compact('posts', 'posts'));
+        
+        return view('posts.index', compact('keyword', 'posts'));
     }
 
     /**
