@@ -41,15 +41,6 @@
       </form>
   </div>
 
-  <!-- // 検索機能　// -->
-  <div>
-    <form action="{{ route('posts.index') }}" method="GET">
-      <input type="text" name="keyword" value="{{ $keyword }}">
-      <input type="submit" value="検索">
-    </form>
-  </div>
-<!-- 検索機能ここまで　// -->
-
 </body>
  
 
@@ -58,6 +49,15 @@
         <p class="border-top border-3"></p>
         <p class="fs-6 my-3">メモ一覧</p>
         <p class="fs-6 my-3">@sortablelink('id', '並び替え')</p>
+        
+      <!-- // 検索機能　// -->
+        <div>
+          <form action="{{ route('posts.index') }}" method="GET">
+            <input type="text" name="keyword" value="{{ $keyword }}">
+            <input type="submit" class="btn btn-primary btn-sm" value="検索">
+          </form>
+        </div>
+      <!-- 検索機能ここまで　// -->
         
       <table class="table">
         <tr>
