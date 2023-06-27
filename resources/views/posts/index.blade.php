@@ -90,7 +90,7 @@
         @endforeach
         
       </table>
-     {{$posts->links()}}
+     {{$posts->appends(request()->input())->links()}}
     </div>
    </div>
    
