@@ -22,7 +22,7 @@ class PostController extends Controller
         $query->where('title', 'LIKE', "%{$keyword}%")->get();
         }
 
-        $posts = $query->where('user_id','=', Auth::user()->id)->sortable()->latest()->paginate(3);
+        $posts = $query->where('user_id','=', Auth::user()->id)->sortable()->latest()->paginate(5);
         
         return view('posts.index', compact('keyword', 'posts'));
     }

@@ -48,17 +48,31 @@
       <div class="mt-5">
         <p class="border-top border-3"></p>
         <p class="fs-6 my-3">メモ一覧</p>
-        <p class="fs-6 my-3">@sortablelink('id', '並び替え')</p>
-        
-      <!-- // 検索機能　// -->
-        <div>
-          <form action="{{ route('posts.index') }}" method="GET">
-            <input type="text" name="keyword" value="{{ $keyword }}">
-            <input type="submit" class="btn btn-primary btn-sm" value="検索">
-          </form>
+      
+        <div class="mb-5 row g-1">
+           <!-- // 検索機能　// -->
+           <div class="col-auto mb-0">
+              <form action="{{ route('posts.index') }}" method="GET">
+                <input type="text" name="keyword" value="{{ $keyword }}">
+                <input type="submit" class="btn btn-primary btn-sm" value="検索">
+              </form>
+           </div>
+           <!-- 検索機能ここまで　// -->
+
+           <div class="dropdown col-auto">
+            <button class="btn btn-info btn-sm dropdown-toggle dropdown-toggle-split" type="button"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            並び替え
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item">@sortablelink('id', 'ID')</li>
+              <li class="dropdown-item">@sortablelink('created_at', '更新日時')</li>
+            </ul>
+           </div>
         </div>
-      <!-- 検索機能ここまで　// -->
-        
+     
+      
+       
+      
       <table class="table">
         <tr>
           <th scope="col">No</th>
